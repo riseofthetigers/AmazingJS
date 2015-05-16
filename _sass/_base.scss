@@ -1,0 +1,176 @@
+body {
+    font-family: 'Source Code Pro', Arial;
+    background-color: #e1e1e1;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px 0;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    //table-layout:fixed;
+}
+
+tr {
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 10px;
+    padding: 2px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+
+    &:after {
+        float: right;
+        font-size: 10px;
+        font-weight: 900;
+        min-width: 38px;
+        text-align: center;
+        line-height: 14px;
+        margin: 2px;
+        padding: 0 2px;
+        border: solid 2px #aaa;
+        color: #aaa;
+    }
+}
+
+
+th {
+    padding: 5px 2px;
+    &:after {
+        border-color: #000;
+        color: #000;
+    }
+
+    & label {
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+td {
+    background-color:#fff;
+}
+
+
+input {
+    position: fixed;
+    visibility: hidden;
+}
+
+
+input[type=radio]#iD:checked ~ table th:nth-child(1):after {
+    content: 'DAY';
+}
+
+input[type=radio]#iW:checked ~ table th:nth-child(1):after {
+    content: 'WEEK';
+}
+
+input[type=radio]#iM:checked ~ table th:nth-child(1):after {
+    content: 'MONTH';
+}
+
+input[type=radio]#iD:checked ~ table th:nth-child(3):after,
+input[type=radio]#iW:checked ~ table th:nth-child(4):after,
+input[type=radio]#iM:checked ~ table th:nth-child(5):after {
+    content: 'DELTA';
+}
+
+input[type=radio]#iD:checked ~ table td[data-pd]:after {
+    content: attr(data-pd);
+}
+
+input[type=radio]#iW:checked ~ table td[data-pw]:after {
+    content: attr(data-pw);
+}
+
+input[type=radio]#iM:checked ~ table td[data-pm]:after {
+    content: attr(data-pm);
+}
+
+input[type=radio]#iD:checked ~ table td[data-sd]:after {
+    content: attr(data-sd);
+}
+
+input[type=radio]#iW:checked ~ table td[data-sw]:after {
+    content: attr(data-sw);
+}
+
+input[type=radio]#iM:checked ~ table td[data-sm]:after {
+    content: attr(data-sm);
+}
+
+input[type=radio]#iD:checked ~ table td[data-md]:after {
+    content: attr(data-md);
+}
+
+input[type=radio]#iW:checked ~ table td[data-mw]:after {
+    content: attr(data-mw);
+}
+
+input[type=radio]#iM:checked ~ table td[data-mm]:after {
+    content: attr(data-mm);
+}
+
+input[type=radio]#iD:checked ~ table td[data-pd]:after,
+input[type=radio]#iW:checked ~ table td[data-pw]:after,
+input[type=radio]#iM:checked ~ table td[data-pm]:after {
+    border-color: #0b2 #0b2 transparent transparent;
+    color: #0b2;
+}
+
+input[type=radio]#iD:checked ~ table td[data-md]:after,
+input[type=radio]#iW:checked ~ table td[data-mw]:after,
+input[type=radio]#iM:checked ~ table td[data-mm]:after {
+    border-color: transparent transparent #b20 #b20;
+    color: #b20;
+}
+
+input[type=radio]#iD:checked ~ table td[data-sd]:after,
+input[type=radio]#iW:checked ~ table td[data-sw]:after,
+input[type=radio]#iM:checked ~ table td[data-sm]:after {
+    border-color: #888;
+    color: #888;
+}
+
+//td:nth-child(1),
+td:nth-child(2) {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
+
+@media (max-width: 50em) {
+    body {
+        font-size: 10px;
+    }
+
+    table {
+        border-spacing: 0px;
+    }
+}
+
+@media (max-width: 50em) {
+    th[data-p]:after,
+    th[data-m]:after,
+    th[data-s]:after,
+    td[data-p]:after,
+    td[data-m]:after,
+    td[data-s]:after {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+}
