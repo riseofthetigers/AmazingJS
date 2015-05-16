@@ -2,9 +2,9 @@
 {% assign offset = page.num | times:1000 %}
 
 {% for i in (0..9) %}{% if forloop.index0 == 0 %}
-<a href="{{baseurl}}/index.html">{{forloop.index0}}</a>{% elsif forloop.index0 == page.num %}
-<a href="{{baseurl}}/k{{forloop.index0}}.html"><strong>{{forloop.index0}}</strong></a>{% else %}
-<a href="{{baseurl}}/k{{forloop.index0}}.html">{{forloop.index0}}</a>{% endif %}{% endfor %}
+<a href="{{site.baseurl}}/index.html">{{forloop.index0}}</a>{% elsif forloop.index0 == page.num %}
+<a href="{{site.baseurl}}/k{{forloop.index0}}.html"><strong>{{forloop.index0}}</strong></a>{% else %}
+<a href="{{site.baseurl}}/k{{forloop.index0}}.html">{{forloop.index0}}</a>{% endif %}{% endfor %}
 
 <input id="iD" type="radio" name="tframe">
 <input id="iW" type="radio" name="tframe" checked>
