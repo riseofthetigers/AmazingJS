@@ -1,4 +1,4 @@
-title: STATS | JS.ORG
-baseurl: "/stats.js.org/" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+title: JS.ORG | STATS 
+baseurl: "" # /stats.js.org/
+url: "http://stats.js.org"
 exclude: []

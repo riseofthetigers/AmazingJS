@@ -1,0 +1,20 @@
+{
+    "name": "server",
+    "version": "0.0.0",
+    "description": "server",
+    "main": "server.js",
+    "author": {
+        "name": "indus",
+        "email": "indus@js.org"
+    },
+    "scripts": {
+        "fetch": "node ../server/data_fetch.js",
+        "dump": "node ../server/data_dump.js",
+
+        "git-commit": "git add -A . && git commit -a -m \"data update\"",
+        "git-push": "git push origin gh-pages --force",
+        "upload": "npm run git-commit && npm run git-push",
+
+        "update": "npm run fetch && npm run dump && npm run upload"
+    }
+}
