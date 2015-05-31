@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js {% if page.bg %}bg{% endif %}" lang="en">
+<!--<![endif]-->
+<head>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <title>JS.ORG</title>
+   <meta name="description" content="Gathering statistics on JavaScript projects since 2015">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- page generated {{ site.time | date_to_rfc822 }} -->
+   {% include icon.html %}
+   {% include ie8.html %}
+   {% include style.html %}
+   <script>var doc = document.documentElement; doc.className = doc.className.replace("no-js", "");</script>
+
+</head>
+<body>
+   {% include header.html %}
+   {{ content }}
+   {% include footer.html %}
+   <link href="css/stats.css" rel="stylesheet" />
+   <script src="js/tbl.min.js"></script>
+   <script>
+      {% if page.ghstars %}{% include ghstars.html %}{% endif %}
+      {% include GA.html %}
+   </script>
+</body>
+</html>
