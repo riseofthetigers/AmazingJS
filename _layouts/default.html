@@ -12,9 +12,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- page generated {{ site.time | date_to_rfc822 }} -->
    {% include icon.html %}
-   {% include ie8.html %}
+   {% if page.dyn %}<!--[if lte IE 8]><meta http-equiv="refresh" content="0; url=stats.js.org/r.html" /><script type="text/javascript">window.location.href="stats.js.org/r.html"</script><style>body {display:none !important}</style><![endif]--><noscript><meta http-equiv="refresh" content="0;url=http://stats.js.org/r.html"></noscript>{% else %}{% include ie8.html %}{% endif %}
    {% include style.html %}
    <script>var doc = document.documentElement; doc.className = doc.className.replace("no-js", "");</script>
+   
 
 </head>
 <body>
@@ -22,7 +23,9 @@
    {{ content }}
    {% include footer.html %}
    <link href="css/stats.css" rel="stylesheet" />
-   <script src="js/tbl.min.js"></script>
+   
+   <script src="js/{% if page.dyn %}main{% else %}tbl{% endif %}.js"></script>
+   
    <script>
       {% if page.ghstars %}{% include ghstars.html %}{% endif %}
       {% include GA.html %}
